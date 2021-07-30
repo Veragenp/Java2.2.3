@@ -3,13 +3,10 @@ public class CreditPaymentService {
 
         double monthlyRate = annualRate / (100 * 12);
 
-        int amountYears = 1;
-        double x = 1 + monthlyRate;
-        int z = -amountMonths;
-        double v = Math.pow(x, z);
+        double mounslyPaymant = sumCredit * (monthlyRate / (1 - (Math.pow((1 + monthlyRate), -amountMonths))));
 
-        double mounslyPaymant = sumCredit * (monthlyRate / (1 - v));
+        double mounslyPaymant1 = (int) mounslyPaymant;
 
-        return mounslyPaymant;
+        return mounslyPaymant1;
     }
 }
